@@ -1,0 +1,78 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-primary: #2563eb;
+    --accent-muted: #f0f9ff;
+    --accent-dark: #1d4ed8;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased transition-colors duration-300 dark:bg-zinc-950 dark:text-white;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer utilities {
+  .bg-accent { background-color: var(--accent-primary); }
+  .bg-accent-muted { background-color: var(--accent-muted); }
+  .bg-accent-dark { background-color: var(--accent-dark); }
+
+  .text-accent { color: var(--accent-primary); }
+  .text-accent-muted { color: var(--accent-muted); }
+  .text-accent-dark { color: var(--accent-dark); }
+
+  .border-accent { border-color: var(--accent-primary); }
+  .border-accent-muted { border-color: var(--accent-muted); }
+  .border-accent-dark { border-color: var(--accent-dark); }
+
+  .from-accent { --tw-gradient-from: var(--accent-primary) !important; --tw-gradient-to: var(--accent-primary) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .via-accent { --tw-gradient-to: var(--accent-primary) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--accent-primary), var(--tw-gradient-to); }
+  .to-accent { --tw-gradient-to: var(--accent-primary) !important; }
+
+  .from-accent-dark { --tw-gradient-from: var(--accent-dark) !important; --tw-gradient-to: var(--accent-dark) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to); }
+  .via-accent-dark { --tw-gradient-to: var(--accent-dark) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--accent-dark), var(--tw-gradient-to); }
+  .to-accent-dark { --tw-gradient-to: var(--accent-dark) !important; }
+
+  .shadow-accent {
+    box-shadow: 0 10px 15px -3px var(--accent-primary), 0 4px 6px -4px var(--accent-primary);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
+}
+
+.hide-default-date::-webkit-datetime-edit-text,
+.hide-default-date::-webkit-datetime-edit-month-field,
+.hide-default-date::-webkit-datetime-edit-day-field,
+.hide-default-date::-webkit-datetime-edit-year-field {
+  color: transparent;
+}
+
+.hide-default-date:focus::-webkit-datetime-edit-text,
+.hide-default-date:focus::-webkit-datetime-edit-month-field,
+.hide-default-date:focus::-webkit-datetime-edit-day-field,
+.hide-default-date:focus::-webkit-datetime-edit-year-field,
+.hide-default-date.has-value::-webkit-datetime-edit-text,
+.hide-default-date.has-value::-webkit-datetime-edit-month-field,
+.hide-default-date.has-value::-webkit-datetime-edit-day-field,
+.hide-default-date.has-value::-webkit-datetime-edit-year-field {
+  color: inherit;
+}
