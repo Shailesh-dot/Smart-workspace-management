@@ -14,7 +14,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     <div className="flex min-h-screen font-sans selection:bg-blue-100 selection:text-blue-700 bg-gray-50 text-gray-900 transition-colors duration-300">
       <Sidebar />
       
-      <main className="flex-1 p-8 lg:p-10 overflow-y-auto scroll-smooth">
+      <main className="flex-1 ml-64 p-8 lg:p-10 overflow-y-auto scroll-smooth">
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
