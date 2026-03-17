@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/workflow/page": "app/workflow/page.js",
+  "/upskilling/page": "app/upskilling/page.js",
+  "/analytics/page": "app/analytics/page.js",
+  "/settings/page": "app/settings/page.js"
+}
