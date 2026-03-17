@@ -3,19 +3,16 @@ import React from "react";
 import { 
   LayoutDashboard, 
   Users, 
-  BookOpen,
   BarChart3, 
   Settings,
   BrainCircuit,
   LogOut,
   GraduationCap
 } from "lucide-react";
-import { useTheme } from "../ThemeContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Sidebar = () => {
-  const { theme, accentColor } = useTheme();
   const pathname = usePathname();
 
   const menuItems: { id: string; href: string; icon: any; label: string }[] = [
@@ -27,22 +24,23 @@ const Sidebar = () => {
   ];
 
   return (
-    <aside className="w-64 h-screen fixed left-0 top-0 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 text-white flex flex-col z-50 shadow-xl transition-colors duration-300">
+    <aside className="w-64 h-screen fixed left-0 top-0 bg-gradient-to-b from-blue-600 via-blue-700 to-blue-800 text-white flex flex-col z-50 shadow-xl">
       <div className="p-6 flex items-center gap-3 border-b border-white/10">
-        <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg transition-all bg-white shadow-black/20">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg bg-white">
           <BrainCircuit className="text-blue-600 w-6 h-6" />
         </div>
-        <span className="font-display font-bold text-lg tracking-tight text-white">SMART FLOW</span>
+        <span className="font-bold text-lg tracking-tight text-white">SMART FLOW</span>
       </div>
       
-      <nav className="flex-1 px-4 space-y-2 mt-4 overflow-y-auto">
+      <nav className="flex-1 px-4 space-y-1 mt-4 overflow-y-auto">
         {menuItems.map((item) => {
           const isActive = pathname === item.href;
           return (
             <Link
               key={item.id}
               href={item.href}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all font-semibold ${
+              prefetch={true}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-150 font-semibold text-sm ${
                 isActive 
                   ? "bg-white text-blue-700 shadow-md"
                   : "text-blue-100 hover:bg-white/10"
@@ -56,9 +54,9 @@ const Sidebar = () => {
       </nav>
 
       <div className="p-4 border-t border-white/10">
-        <button className="w-full flex items-center gap-3 px-4 py-3 text-blue-200 hover:bg-white/10 rounded-xl transition-all">
+        <button className="w-full flex items-center gap-3 px-4 py-3 text-blue-200 hover:bg-white/10 rounded-xl transition-all text-sm font-semibold">
           <LogOut className="w-5 h-5" />
-          <span className="font-semibold">Logout</span>
+          <span>Logout</span>
         </button>
       </div>
     </aside>
