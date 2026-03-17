@@ -5,16 +5,12 @@
 
 @layer base {
   :root {
-    --accent-primary: #0ea5e9;
+    --accent-primary: #2563eb; /* Updated to Blue 600, common in skilltech-next */
   }
 
   body {
-    @apply bg-white text-zinc-900 antialiased transition-colors duration-300;
+    @apply bg-gray-50 text-gray-900 antialiased transition-colors duration-300;
     font-family: var(--font-sans);
-  }
-
-  .dark body {
-    @apply bg-zinc-950 text-zinc-100;
   }
 }
 

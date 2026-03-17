@@ -11,14 +11,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
   const pathname = usePathname();
 
   return (
-    <div className={`flex min-h-screen font-sans selection:bg-sky-100 selection:text-sky-700 transition-colors duration-300 ${
-      theme === "dark" ? "bg-zinc-950 text-zinc-100" : "bg-white text-zinc-900"
-    }`}>
+    <div className="flex min-h-screen font-sans selection:bg-blue-100 selection:text-blue-700 bg-gray-50 text-gray-900 transition-colors duration-300">
       <Sidebar />
       
-      <main className={`flex-1 p-8 lg:p-12 overflow-y-auto transition-colors duration-300 ${
-        theme === "dark" ? "bg-zinc-900/50" : "bg-sky-50/20"
-      }`}>
+      <main className="flex-1 p-8 lg:p-10 overflow-y-auto scroll-smooth">
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}
